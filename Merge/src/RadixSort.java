@@ -3,19 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-/**
- *
- * @author alumno
- */
 import java.util.LinkedList;
 import java.util.Queue;
         
 public class RadixSort {
-    static void rad( int[] args){
-        Queue<Integer> cola1 = new LinkedList();
-        Queue<Integer> cola2 = new LinkedList();
-        Queue<Integer> cola3 = new LinkedList();
-        Queue<Integer> cola4 = new LinkedList();
+    static int[] rad(int[] args){
+        Queue<Integer> cola1 = new LinkedList<>();
+        Queue<Integer> cola2 = new LinkedList<>();
+        Queue<Integer> cola3 = new LinkedList<>();
+        Queue<Integer> cola4 = new LinkedList<>();
         //para el cuarto digito
         for (int i = 0; i < 15; i++) {
             if (args[i]%10 == 1) {
@@ -28,7 +24,7 @@ public class RadixSort {
                 cola4.offer(args[i]);
             }
         }
-        int j=0, p=0;
+        int j, p;
         System.out.println("Cola 1: "+cola1);
         System.out.println("Cola 2: "+cola2);
         System.out.println("Cola 3: "+cola3);
@@ -39,17 +35,17 @@ public class RadixSort {
             args[j]=cola1.peek();
             cola1.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola2.peek()== null) {break;}
             args[j]=cola2.peek();
             cola2.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola3.peek()== null) {break;}
             args[j]=cola3.peek();
             cola3.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola4.peek()== null) {break;}
             args[j]=cola4.peek();
             cola4.poll();
@@ -80,17 +76,17 @@ public class RadixSort {
             args[j]=cola1.peek();
             cola1.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola2.peek()== null) {break;}
             args[j]=cola2.peek();
             cola2.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola3.peek()== null) {break;}
             args[j]=cola3.peek();
             cola3.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola4.peek()== null) {break;}
             args[j]=cola4.peek();
             cola4.poll();
@@ -121,17 +117,17 @@ public class RadixSort {
             args[j]=cola1.peek();
             cola1.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola2.peek()== null) {break;}
             args[j]=cola2.peek();
             cola2.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola3.peek()== null) {break;}
             args[j]=cola3.peek();
             cola3.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola4.peek()== null) {break;}
             args[j]=cola4.peek();
             cola4.poll();
@@ -163,17 +159,17 @@ public class RadixSort {
             args[j]=cola1.peek();
             cola1.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola2.peek()== null) {break;}
             args[j]=cola2.peek();
             cola2.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola3.peek()== null) {break;}
             args[j]=cola3.peek();
             cola3.poll();
         }
-        for (j = j; j < 15; j++) {
+        for (; j < 15; j++) {
             if (cola4.peek()== null) {break;}
             args[j]=cola4.peek();
             cola4.poll();
@@ -181,5 +177,6 @@ public class RadixSort {
         System.out.println("Colas vacias cola1: " + cola1 + " cola2: " + cola2 + " cola3: " + cola3 + " cola4: " + cola4);
         System.out.println("Lista resusltante:");
         Utilerias.printArray(args);
-    }    
+        return args;
+    }
 }

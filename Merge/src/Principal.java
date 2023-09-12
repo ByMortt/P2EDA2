@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Principal {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     { 
         //escribir el código aqui
         int opcion;
@@ -14,25 +14,22 @@ public class Principal {
         System.out.println("2) Radix Sort");
         opcion = op.nextInt();
         switch (opcion) {
-            case 1 -> {
-                System.out.println("Counting Sort");
-            }
+            case 1 -> System.out.println("Counting Sort");
             case 2 -> {
                 System.out.println("Radix Sort");
-                int[] num = new int[15];
-                Scanner teclado = new Scanner(System.in);
-                System.out.println("Dame 15 numeros con digitos del 1 al 4");
-                for (int i = 0; i < num.length; i++) {
-                    num[i] = teclado.nextInt();
+                //usa la libreria random para generar numeros de cuatro dígitos (cada dígito es un número aleatorio entre 1 y 4, ejemplo 1111, 12344, 1342) y los guarda en un arreglo de 15 elementos
+                int[] num1 = new int[15];
+                for (int i = 0; i < 15; i++) {
+                    num1[i] = (int) (Math.random() * 4 + 1) * 1000 + (int) (Math.random() * 4 + 1) * 100 + (int) (Math.random() * 4 + 1) * 10 + (int) (Math.random() * 4 + 1);
                 }
-                System.out.println("La lista obtenida es: ");
-                Utilerias.printArray(num);
-                //call de RadixSort
-                RadixSort.rad(num);
+                System.out.println("Lista original: ");
+                Utilerias.printArray(num1);
+                System.out.println("Lista ordenada: ");
+                RadixSort.rad(num1);
             }
             default -> throw new AssertionError();
         }
-    } 
+    }
 } 
     
     
