@@ -14,26 +14,23 @@ public class Principal {
         System.out.println("2) Radix Sort");
         opcion = op.nextInt();
         switch (opcion) {
-            case 1:{
+            case 1 -> {
                 System.out.println("Counting Sort");
-                break;
             }
-            case 2:{
+            case 2 -> {
                 System.out.println("Radix Sort");
-                int [] num = new int[15];
+                int[] num = new int[15];
                 Scanner teclado = new Scanner(System.in);
                 System.out.println("Dame 15 numeros con digitos del 1 al 4");
                 for (int i = 0; i < num.length; i++) {
-                    num[i]=teclado.nextInt();
+                    num[i] = teclado.nextInt();
                 }
                 System.out.println("La lista obtenida es: ");
                 Utilerias.printArray(num);
                 //call de RadixSort
                 RadixSort.rad(num);
-                break;
             }
-            default:
-                throw new AssertionError();
+            default -> throw new AssertionError();
         }
     } 
 } 

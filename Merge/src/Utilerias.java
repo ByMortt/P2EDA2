@@ -10,9 +10,8 @@
 public class Utilerias {
     static void printArray(int arr[]) 
     { 
-        int n = arr.length; 
-        for (int i=0; i<n; ++i) 
-            System.out.print(arr[i] + " "); 
+        int n = arr.length;
+        for (int j : arr) System.out.print(j + " ");
         System.out.println(); 
     } 
     
