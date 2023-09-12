@@ -12,6 +12,8 @@ public class Principal {
         System.out.println("Escoja alaguna de las siguientes opciones para ordenar la lista");
         System.out.println("1) Counting Sort");
         System.out.println("2) Radix Sort");
+        System.out.println("3) Merge Sort");
+        System.out.println("4) Salir");
         opcion = op.nextInt();
         switch (opcion) {
             case 1 -> System.out.println("Counting Sort");
@@ -26,6 +28,22 @@ public class Principal {
                 Utilerias.printArray(num1);
                 System.out.println("Lista ordenada: ");
                 RadixSort.rad(num1);
+            }
+            case 3 ->{
+                System.out.println("Merge Sort");
+                int[] num2 = new int[15];
+                for (int i = 0; i < 15; i++) {
+                    num2[i] = (int) (Math.random() * 4 + 1) * 1000 + (int) (Math.random() * 4 + 1) * 100 + (int) (Math.random() * 4 + 1) * 10 + (int) (Math.random() * 4 + 1);
+                }
+                System.out.println("Lista original: ");
+                Utilerias.printArray(num2);
+                System.out.println("Lista ordenada: ");
+                MergeSort.sort(num2, 0, num2.length - 1);
+                Utilerias.printArray(num2);
+            }
+            case 4 -> {
+                System.out.println("Salir");
+                System.exit(0);
             }
             default -> throw new AssertionError();
         }

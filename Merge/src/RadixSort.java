@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
         
 public class RadixSort {
-    static int[] rad(int[] args){
+    static void rad(int[] args){
         Queue<Integer> cola1 = new LinkedList<>();
         Queue<Integer> cola2 = new LinkedList<>();
         Queue<Integer> cola3 = new LinkedList<>();
@@ -177,6 +177,5 @@ public class RadixSort {
         System.out.println("Colas vacias cola1: " + cola1 + " cola2: " + cola2 + " cola3: " + cola3 + " cola4: " + cola4);
         System.out.println("Lista resusltante:");
         Utilerias.printArray(args);
-        return args;
     }
 }

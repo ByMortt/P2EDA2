@@ -1,7 +1,7 @@
 
 public class MergeSort {
     
-    void merge(int[] arr, int l, int m, int r)
+    static void merge(int[] arr, int l, int m, int r)
     { 
         int n1 = m - l + 1; 
         int n2 = r - m; 
@@ -10,8 +10,10 @@ public class MergeSort {
         int[] R = new int [n2];
 
         System.arraycopy(arr, l, L, 0, n1);
-        for (int j=0; j<n2; ++j) 
-            R[j] = arr[m + 1+ j]; 
+        for (int j=0; j<n2; ++j){
+            R[j] = arr[m + 1+ j];
+            Utilerias.printArray(R);
+        }
   
         int i = 0, j = 0; 
   
@@ -20,31 +22,35 @@ public class MergeSort {
         { 
             if (L[i] <= R[j]) 
             { 
-                arr[k] = L[i]; 
-                i++; 
+                arr[k] = L[i];
+                i++;
+                Utilerias.printArray(arr);
             } 
             else
             { 
-                arr[k] = R[j]; 
-                j++; 
+                arr[k] = R[j];
+                j++;
+                Utilerias.printArray(arr);
             } 
             k++; 
         } 
   
         while (i < n1) { 
-            arr[k] = L[i]; 
+            arr[k] = L[i];
+            Utilerias.printArray(arr);
             i++; 
             k++; 
         } 
   
         while (j < n2) { 
-            arr[k] = R[j]; 
+            arr[k] = R[j];
+            Utilerias.printArray(arr);
             j++; 
             k++; 
         } 
     } 
   
-    void sort(int[] arr, int l, int r) {
+    static void sort(int[] arr, int l, int r) {
         if (l < r) { 
             int m = (l+r)/2; 
   
