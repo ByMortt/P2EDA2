@@ -9,10 +9,16 @@
  */
 public class Utilerias {
     static void printArray(int[] arr)
-    { 
-        int n = arr.length;
+    {
         for (int j : arr) System.out.print(j + " ");
         System.out.println(); 
-    } 
-    
+    }
+
+    //method to generate a random array of 15 elements
+    static void randomArray(int[] arr){
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            arr[i] = (int)(Math.random()*100);
+        }
+    }
 }

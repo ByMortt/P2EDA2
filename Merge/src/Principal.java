@@ -52,14 +52,40 @@ public class Principal {
             case 3 ->{
                 System.out.println("Merge Sort");
                 int[] num2 = new int[15];
-                for (int i = 0; i < 15; i++) {
-                    num2[i] = (int) (Math.random() * 4 + 1) * 1000 + (int) (Math.random() * 4 + 1) * 100 + (int) (Math.random() * 4 + 1) * 10 + (int) (Math.random() * 4 + 1);
-                }
-                System.out.println("Lista original: ");
-                Utilerias.printArray(num2);
-                System.out.println("Lista ordenada: ");
-                MergeSort.sort(num2, 0, num2.length - 1);
-                Utilerias.printArray(num2);
+                int opcion1;
+
+                do{
+                    Scanner op1 = new Scanner(System.in);
+                    System.out.println("Escoja alguna de las siguientes opciones:");
+                    System.out.println("1) Generar lista aleatoria");
+                    System.out.println("2) Mostrar lista original");
+                    System.out.println("3) Mostrar lista ordenada");
+                    System.out.println("4) Salir");
+                    opcion1 = op1.nextInt();
+                    switch (opcion1){
+                        //case 1
+                        case 1 ->//use the method randomArray to generate a random array of 15 elements
+                                Utilerias.randomArray(num2);
+                        //case 2
+                        case 2 ->{
+                            //print the original array
+                            System.out.println("Lista original: ");
+                            Utilerias.printArray(num2);
+                        }
+                        //case 3
+                        case 3 ->{
+                            //print the sorted array
+                            System.out.println("Lista ordenada: ");
+                            MergeSort.sort(num2, 0, num2.length - 1);
+                            Utilerias.printArray(num2);
+                        }
+                        //case 4
+                        case 4 ->//break while loop to return to the first menu
+                                System.out.println("Salir");
+                        //in case the user chooses an option that is not in the menu (1-4) the program will ask the user to choose again
+                        default -> System.out.println("Opción no válida");
+                    }
+                }while (opcion1 != 4);
             }
             case 4 -> {
                 //use the system class to exit the program
