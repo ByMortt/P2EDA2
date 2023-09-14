@@ -13,6 +13,7 @@ public class RadixSort {
         Queue<Integer> cola3 = new LinkedList<>();
         Queue<Integer> cola4 = new LinkedList<>();
         //para el cuarto digito
+        //loop to store the numbers in the queues
         for (int i = 0; i < 15; i++) {
             if (args[i]%10 == 1) {
                 cola1.offer(args[i]);
@@ -29,7 +30,7 @@ public class RadixSort {
         System.out.println("Cola 2: "+cola2);
         System.out.println("Cola 3: "+cola3);
         System.out.println("Cola 4: "+cola4);
-        
+        //loop to store the numbers in the array
         for (j = 0; j < 15; j++) {
             if (cola1.peek()== null) {break;}
             args[j]=cola1.peek();
@@ -51,10 +52,11 @@ public class RadixSort {
             cola4.poll();
         }
         System.out.println("Colas vacias cola1: " + cola1 + " cola2: " + cola2 + " cola3: " + cola3 + " cola4: " + cola4);
-        System.out.println("Lista resusltante:");
+        System.out.println("Lista resultante:");
         Utilerias.printArray(args);
         
         //3er dìgito
+        //loop to store the numbers in the queues again
         for (int i = 0; i < 15; i++) {
             p=args[i]/10;
             if (p%10==1) {
@@ -71,6 +73,7 @@ public class RadixSort {
         System.out.println("Cola 2: "+cola2);
         System.out.println("Cola 3: "+cola3);
         System.out.println("Cola 4: "+cola4);
+        //loop to store the numbers in the array again
         for (j = 0; j < 15; j++) {
             if (cola1.peek()== null) {break;}
             args[j]=cola1.peek();
@@ -92,10 +95,11 @@ public class RadixSort {
             cola4.poll();
         }
         System.out.println("Colas vacias cola1: " + cola1 + " cola2: " + cola2 + " cola3: " + cola3 + " cola4: " + cola4);
-        System.out.println("Lista resusltante:");
+        System.out.println("Lista resultante:");
         Utilerias.printArray(args);
         
         //Para el segundo dìgito
+        //loop to store the numbers in the queues again
         for (int i = 0; i < 15; i++) {
             p=args[i]/10/10;
             if (p%10==1) {
@@ -112,6 +116,7 @@ public class RadixSort {
         System.out.println("Cola 2: "+cola2);
         System.out.println("Cola 3: "+cola3);
         System.out.println("Cola 4: "+cola4);
+        //loop to store the numbers in the array again
         for (j = 0; j < 15; j++) {
             if (cola1.peek()== null) {break;}
             args[j]=cola1.peek();
@@ -133,11 +138,11 @@ public class RadixSort {
             cola4.poll();
         }
         System.out.println("Colas vacias cola1: " + cola1 + " cola2: " + cola2 + " cola3: " + cola3 + " cola4: " + cola4);
-        System.out.println("Lista resusltante:");
+        System.out.println("Lista resultante:");
         Utilerias.printArray(args);
         
         //para el primer digito
-        
+        //loop to store the numbers in the queues again
         for (int i = 0; i < 15; i++) {
             p=args[i]/10/10/10;
             if (p%10==1) {
@@ -154,6 +159,7 @@ public class RadixSort {
         System.out.println("Cola 2: "+cola2);
         System.out.println("Cola 3: "+cola3);
         System.out.println("Cola 4: "+cola4);
+        //loop to store the numbers in the array again
         for (j = 0; j < 15; j++) {
             if (cola1.peek()== null) {break;}
             args[j]=cola1.peek();
@@ -175,7 +181,8 @@ public class RadixSort {
             cola4.poll();
         }
         System.out.println("Colas vacias cola1: " + cola1 + " cola2: " + cola2 + " cola3: " + cola3 + " cola4: " + cola4);
-        System.out.println("Lista resusltante:");
+        //print the sorted array
+        System.out.println("Lista resultante:");
         Utilerias.printArray(args);
     }
 }
